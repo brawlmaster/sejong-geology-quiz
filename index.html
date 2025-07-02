@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>정보과학 시험 대비 문제</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; background-color: #f9f9f9; }
+        .question { background-color: white; padding: 15px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+        .code-block { background-color: #efefef; padding: 10px; border-radius: 5px; font-family: Consolas, monospace; }
+        .answer { display: none; color: green; font-weight: bold; margin-top: 10px; }
+        h2 { color: #333366; }
+        button { margin-top: 5px; }
+    </style>
+    <script>
+        function showAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>정보과학 시험 대비 문제 100제 + 코드 빈칸 문제 20제</h1>
+
+    <div class="question">
+        <h2>문제 1</h2>
+        <p>하이퍼파라미터와 파라미터의 차이로 올바른 것은?</p>
+        <button onclick="showAnswer('answer1')">1. 하이퍼파라미터는 학습 중에 결정된다</button><br><button onclick="showAnswer('answer1')">2. 파라미터는 사용자가 설정한다</button><br><button onclick="showAnswer('answer1')">3. 하이퍼파라미터는 모델 외부에서 설정한다</button><br><button onclick="showAnswer('answer1')">4. 파라미터는 모델 외부에서 설정한다</button><br>
+        <div id="answer1" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 2</h2>
+        <p>KNN에서 하이퍼파라미터가 아닌 것은?</p>
+        <button onclick="showAnswer('answer2')">1. k값</button><br><button onclick="showAnswer('answer2')">2. 거리 측정 방법</button><br><button onclick="showAnswer('answer2')">3. 가중치 방식</button><br><button onclick="showAnswer('answer2')">4. 학습 데이터</button><br>
+        <div id="answer2" class="answer">정답: 4</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 3</h2>
+        <p>모델 튜닝에서 하이퍼파라미터 튜닝이 중요한 이유는?</p>
+        <button onclick="showAnswer('answer3')">1. 데이터를 변경하기 위해</button><br><button onclick="showAnswer('answer3')">2. 모델 구조를 바꾸기 위해</button><br><button onclick="showAnswer('answer3')">3. 모델 성능을 개선하기 위해</button><br><button onclick="showAnswer('answer3')">4. 레이블을 변경하기 위해</button><br>
+        <div id="answer3" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 4</h2>
+        <p>다음 중 하이퍼파라미터의 특징으로 옳지 않은 것은?</p>
+        <button onclick="showAnswer('answer4')">1. 학습 과정에서 자동으로 조정된다</button><br><button onclick="showAnswer('answer4')">2. 사용자가 직접 설정해야 한다</button><br><button onclick="showAnswer('answer4')">3. 경험적 방법으로 선택한다</button><br><button onclick="showAnswer('answer4')">4. 일반화 성능에 영향을 준다</button><br>
+        <div id="answer4" class="answer">정답: 1</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 5</h2>
+        <p>선형 회귀에서 하이퍼파라미터에 해당하는 것은?</p>
+        <button onclick="showAnswer('answer5')">1. 회귀 계수</button><br><button onclick="showAnswer('answer5')">2. 절편</button><br><button onclick="showAnswer('answer5')">3. 정규화 강도(alpha)</button><br><button onclick="showAnswer('answer5')">4. 잔차</button><br>
+        <div id="answer5" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 6</h2>
+        <p>정규화(Normalization)에 대한 설명으로 옳은 것은?</p>
+        <button onclick="showAnswer('answer6')">1. 평균 0, 분산 1로 변환한다</button><br><button onclick="showAnswer('answer6')">2. 최솟값과 최댓값 기준으로 스케일링</button><br><button onclick="showAnswer('answer6')">3. 로그 변환을 수행한다</button><br><button onclick="showAnswer('answer6')">4. 결측치를 제거한다</button><br>
+        <div id="answer6" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 7</h2>
+        <p>표준화(Standardization)의 결과는?</p>
+        <button onclick="showAnswer('answer7')">1. 데이터가 0과 1 사이</button><br><button onclick="showAnswer('answer7')">2. 데이터가 평균 0, 분산 1</button><br><button onclick="showAnswer('answer7')">3. 데이터가 제곱합 1</button><br><button onclick="showAnswer('answer7')">4. 데이터가 최대값 기준으로 변환</button><br>
+        <div id="answer7" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 8</h2>
+        <p>다음 중 피처 스케일링이 반드시 필요한 모델은?</p>
+        <button onclick="showAnswer('answer8')">1. 의사결정트리</button><br><button onclick="showAnswer('answer8')">2. 랜덤 포레스트</button><br><button onclick="showAnswer('answer8')">3. KNN</button><br><button onclick="showAnswer('answer8')">4. XGBoost</button><br>
+        <div id="answer8" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 9</h2>
+        <p>StratifiedKFold가 필요한 이유는?</p>
+        <button onclick="showAnswer('answer9')">1. 데이터가 많은 경우</button><br><button onclick="showAnswer('answer9')">2. 레이블 불균형을 방지하기 위해</button><br><button onclick="showAnswer('answer9')">3. 속도를 높이기 위해</button><br><button onclick="showAnswer('answer9')">4. 중복 데이터를 제거하기 위해</button><br>
+        <div id="answer9" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 10</h2>
+        <p>train_test_split에서 stratify 파라미터가 없을 경우 어떤 문제가 발생할 수 있는가?</p>
+        <button onclick="showAnswer('answer10')">1. 훈련 데이터가 너무 커진다</button><br><button onclick="showAnswer('answer10')">2. 모델의 하이퍼파라미터가 튜닝되지 않는다</button><br><button onclick="showAnswer('answer10')">3. 레이블 불균형 데이터가 왜곡된다</button><br><button onclick="showAnswer('answer10')">4. 정확도가 무조건 높게 나온다</button><br>
+        <div id="answer10" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 11</h2>
+        <p>Holdout 방식의 특징으로 옳은 것은?</p>
+        <button onclick="showAnswer('answer11')">1. 데이터가 중복으로 평가된다</button><br><button onclick="showAnswer('answer11')">2. 모든 데이터를 학습에 사용한다</button><br><button onclick="showAnswer('answer11')">3. 빠르게 수행 가능하다</button><br><button onclick="showAnswer('answer11')">4. 항상 최적의 결과를 보장한다</button><br>
+        <div id="answer11" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 12</h2>
+        <p>KFold의 단점은?</p>
+        <button onclick="showAnswer('answer12')">1. 레이블 불균형을 해결하지 못한다</button><br><button onclick="showAnswer('answer12')">2. 데이터가 부족하다</button><br><button onclick="showAnswer('answer12')">3. 모델을 튜닝할 수 없다</button><br><button onclick="showAnswer('answer12')">4. 테스트 데이터를 전혀 활용하지 않는다</button><br>
+        <div id="answer12" class="answer">정답: 1</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 13</h2>
+        <p>StratifiedKFold의 한계는?</p>
+        <button onclick="showAnswer('answer13')">1. 회귀 문제에서는 사용하기 어렵다</button><br><button onclick="showAnswer('answer13')">2. 분류 문제에서는 동작하지 않는다</button><br><button onclick="showAnswer('answer13')">3. 속도가 매우 느리다</button><br><button onclick="showAnswer('answer13')">4. 중복 데이터를 만든다</button><br>
+        <div id="answer13" class="answer">정답: 1</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 14</h2>
+        <p>Precision이 중요한 경우는?</p>
+        <button onclick="showAnswer('answer14')">1. 암 진단</button><br><button onclick="showAnswer('answer14')">2. 스팸 필터</button><br><button onclick="showAnswer('answer14')">3. 사기 탐지</button><br><button onclick="showAnswer('answer14')">4. 고장 예측</button><br>
+        <div id="answer14" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 15</h2>
+        <p>Recall이 중요한 경우는?</p>
+        <button onclick="showAnswer('answer15')">1. 스팸 필터</button><br><button onclick="showAnswer('answer15')">2. 정상 메일 분류</button><br><button onclick="showAnswer('answer15')">3. 암 진단</button><br><button onclick="showAnswer('answer15')">4. 제품 추천</button><br>
+        <div id="answer15" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 16</h2>
+        <p>F1-score가 필요한 이유는?</p>
+        <button onclick="showAnswer('answer16')">1. 정확도만으로 충분해서</button><br><button onclick="showAnswer('answer16')">2. 정밀도와 재현율의 균형을 위해</button><br><button onclick="showAnswer('answer16')">3. AUC를 대체하기 위해</button><br><button onclick="showAnswer('answer16')">4. 모델이 과적합되었기 때문에</button><br>
+        <div id="answer16" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 17</h2>
+        <p>다음 중 정확도(Accuracy) 수식은?</p>
+        <button onclick="showAnswer('answer17')">1. (TP+TN)/(TP+FP+FN+TN)</button><br><button onclick="showAnswer('answer17')">2. TP/(TP+FP)</button><br><button onclick="showAnswer('answer17')">3. TP/(TP+FN)</button><br><button onclick="showAnswer('answer17')">4. 2TP/(2TP+FP+FN)</button><br>
+        <div id="answer17" class="answer">정답: 1</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 18</h2>
+        <p>다음 중 정밀도(Precision) 수식은?</p>
+        <button onclick="showAnswer('answer18')">1. (TP+TN)/전체</button><br><button onclick="showAnswer('answer18')">2. TP/(TP+FP)</button><br><button onclick="showAnswer('answer18')">3. TP/(TP+FN)</button><br><button onclick="showAnswer('answer18')">4. 2TP/(2TP+FP+FN)</button><br>
+        <div id="answer18" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 19</h2>
+        <p>다음 중 재현율(Recall) 수식은?</p>
+        <button onclick="showAnswer('answer19')">1. (TP+TN)/전체</button><br><button onclick="showAnswer('answer19')">2. TP/(TP+FP)</button><br><button onclick="showAnswer('answer19')">3. TP/(TP+FN)</button><br><button onclick="showAnswer('answer19')">4. 2TP/(2TP+FP+FN)</button><br>
+        <div id="answer19" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 20</h2>
+        <p>다음 중 F1-score 수식은?</p>
+        <button onclick="showAnswer('answer20')">1. 2TP/(2TP+FP+FN)</button><br><button onclick="showAnswer('answer20')">2. TP/(TP+FP)</button><br><button onclick="showAnswer('answer20')">3. (TP+TN)/전체</button><br><button onclick="showAnswer('answer20')">4. TP/(TP+FN)</button><br>
+        <div id="answer20" class="answer">정답: 1</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 21</h2>
+        <p>회귀 모델의 MSE는?</p>
+        <button onclick="showAnswer('answer21')">1. 오차의 절대값 평균</button><br><button onclick="showAnswer('answer21')">2. 오차 제곱 평균</button><br><button onclick="showAnswer('answer21')">3. 오차 제곱근 평균</button><br><button onclick="showAnswer('answer21')">4. 결정계수</button><br>
+        <div id="answer21" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 22</h2>
+        <p>회귀 모델의 RMSE는?</p>
+        <button onclick="showAnswer('answer22')">1. MSE의 제곱근</button><br><button onclick="showAnswer('answer22')">2. MAE의 제곱</button><br><button onclick="showAnswer('answer22')">3. 오차 평균</button><br><button onclick="showAnswer('answer22')">4. 결정계수</button><br>
+        <div id="answer22" class="answer">정답: 1</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 23</h2>
+        <p>실루엣 계수는 무엇을 측정하는가?</p>
+        <button onclick="showAnswer('answer23')">1. 회귀의 정확도</button><br><button onclick="showAnswer('answer23')">2. 군집 내 거리와 다른 군집과의 거리 비율</button><br><button onclick="showAnswer('answer23')">3. 정확도</button><br><button onclick="showAnswer('answer23')">4. 재현율</button><br>
+        <div id="answer23" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 24</h2>
+        <p>응집도(Inertia)의 정의는?</p>
+        <button onclick="showAnswer('answer24')">1. 클수록 좋다</button><br><button onclick="showAnswer('answer24')">2. 군집 간 거리의 합</button><br><button onclick="showAnswer('answer24')">3. 군집 중심으로부터의 거리 제곱 합</button><br><button onclick="showAnswer('answer24')">4. 오차 제곱 합</button><br>
+        <div id="answer24" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 25</h2>
+        <p>과적합의 원인으로 옳은 것은?</p>
+        <button onclick="showAnswer('answer25')">1. 데이터가 너무 많다</button><br><button onclick="showAnswer('answer25')">2. 모델이 너무 단순하다</button><br><button onclick="showAnswer('answer25')">3. 모델이 너무 복잡하다</button><br><button onclick="showAnswer('answer25')">4. 정규화가 잘 되어 있다</button><br>
+        <div id="answer25" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 26</h2>
+        <p>과소적합의 해결방법은?</p>
+        <button onclick="showAnswer('answer26')">1. 모델 단순화</button><br><button onclick="showAnswer('answer26')">2. 데이터 줄이기</button><br><button onclick="showAnswer('answer26')">3. 모델 복잡도 증가</button><br><button onclick="showAnswer('answer26')">4. 정규화 강도 증가</button><br>
+        <div id="answer26" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 27</h2>
+        <p>KNN에서 k값이 너무 크면 발생하는 문제는?</p>
+        <button onclick="showAnswer('answer27')">1. 노이즈 민감</button><br><button onclick="showAnswer('answer27')">2. 과적합</button><br><button onclick="showAnswer('answer27')">3. 과소적합</button><br><button onclick="showAnswer('answer27')">4. 정확도 증가</button><br>
+        <div id="answer27" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 28</h2>
+        <p>의사결정트리에서 정보 균일도를 나타내는 지표가 아닌 것은?</p>
+        <button onclick="showAnswer('answer28')">1. 엔트로피</button><br><button onclick="showAnswer('answer28')">2. 지니 계수</button><br><button onclick="showAnswer('answer28')">3. 정보 이득</button><br><button onclick="showAnswer('answer28')">4. RMSE</button><br>
+        <div id="answer28" class="answer">정답: 4</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 29</h2>
+        <p>K-means가 잘 동작하지 않는 경우는?</p>
+        <button onclick="showAnswer('answer29')">1. 데이터가 고르게 퍼져 있는 경우</button><br><button onclick="showAnswer('answer29')">2. 이상치가 많은 경우</button><br><button onclick="showAnswer('answer29')">3. 데이터가 적은 경우</button><br><button onclick="showAnswer('answer29')">4. 클러스터가 명확할 때</button><br>
+        <div id="answer29" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 30</h2>
+        <p>선형 회귀의 절편(intercept)은 무엇인가?</p>
+        <button onclick="showAnswer('answer30')">1. 기울기</button><br><button onclick="showAnswer('answer30')">2. y축과 만나는 점</button><br><button onclick="showAnswer('answer30')">3. 회귀 계수</button><br><button onclick="showAnswer('answer30')">4. 에러</button><br>
+        <div id="answer30" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 31</h2>
+        <p>팔꿈치 기법의 목적은?</p>
+        <button onclick="showAnswer('answer31')">1. 최적의 k값 찾기</button><br><button onclick="showAnswer('answer31')">2. 정확도 측정</button><br><button onclick="showAnswer('answer31')">3. 정밀도 계산</button><br><button onclick="showAnswer('answer31')">4. 회귀 계수 확인</button><br>
+        <div id="answer31" class="answer">정답: 1</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 32</h2>
+        <p>K-means++가 기존 K-means보다 나은 이유는?</p>
+        <button onclick="showAnswer('answer32')">1. 속도가 느리다</button><br><button onclick="showAnswer('answer32')">2. 초기 중심점 선택이 더 나음</button><br><button onclick="showAnswer('answer32')">3. k값이 작다</button><br><button onclick="showAnswer('answer32')">4. 데이터를 덜 사용한다</button><br>
+        <div id="answer32" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 33</h2>
+        <p>의사결정트리에서 과적합을 방지하는 방법은?</p>
+        <button onclick="showAnswer('answer33')">1. 나무 깊이를 늘린다</button><br><button onclick="showAnswer('answer33')">2. 가지치기를 한다</button><br><button onclick="showAnswer('answer33')">3. 샘플 수를 줄인다</button><br><button onclick="showAnswer('answer33')">4. 피처를 제거한다</button><br>
+        <div id="answer33" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 34</h2>
+        <p>KNN에서 거리 측정 방식이 중요한 이유는?</p>
+        <button onclick="showAnswer('answer34')">1. 거리 계산을 하지 않기 때문</button><br><button onclick="showAnswer('answer34')">2. 거리 기준으로 이웃을 찾기 때문</button><br><button onclick="showAnswer('answer34')">3. 레이블을 바꾸기 위해</button><br><button onclick="showAnswer('answer34')">4. 정확도와 무관하다</button><br>
+        <div id="answer34" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 35</h2>
+        <p>K-means에서 반복 종료 조건은?</p>
+        <button onclick="showAnswer('answer35')">1. 군집의 개수가 늘어날 때</button><br><button onclick="showAnswer('answer35')">2. 중심점 이동이 없을 때</button><br><button onclick="showAnswer('answer35')">3. 데이터가 부족할 때</button><br><button onclick="showAnswer('answer35')">4. 정확도가 100%일 때</button><br>
+        <div id="answer35" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 36</h2>
+        <p>선형 회귀에서 회귀 계수는 무엇을 의미하는가?</p>
+        <button onclick="showAnswer('answer36')">1. 절편</button><br><button onclick="showAnswer('answer36')">2. 종속 변수</button><br><button onclick="showAnswer('answer36')">3. 각 피처가 결과에 미치는 영향력</button><br><button onclick="showAnswer('answer36')">4. 에러 값</button><br>
+        <div id="answer36" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 37</h2>
+        <p>정보 보안의 5요소가 아닌 것은?</p>
+        <button onclick="showAnswer('answer37')">1. 기밀성</button><br><button onclick="showAnswer('answer37')">2. 무결성</button><br><button onclick="showAnswer('answer37')">3. 재현율</button><br><button onclick="showAnswer('answer37')">4. 인증</button><br>
+        <div id="answer37" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 38</h2>
+        <p>부인 방지가 의미하는 것은?</p>
+        <button onclick="showAnswer('answer38')">1. 데이터 암호화</button><br><button onclick="showAnswer('answer38')">2. 누가 했는지 증명</button><br><button onclick="showAnswer('answer38')">3. 데이터 백업</button><br><button onclick="showAnswer('answer38')">4. 사용자 권한 관리</button><br>
+        <div id="answer38" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 39</h2>
+        <p>무결성의 예시는?</p>
+        <button onclick="showAnswer('answer39')">1. 디지털 서명</button><br><button onclick="showAnswer('answer39')">2. 암호화</button><br><button onclick="showAnswer('answer39')">3. 해시값 검증</button><br><button onclick="showAnswer('answer39')">4. MFA 인증</button><br>
+        <div id="answer39" class="answer">정답: 3</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 40</h2>
+        <p>기밀성의 목적은?</p>
+        <button onclick="showAnswer('answer40')">1. 데이터 공개</button><br><button onclick="showAnswer('answer40')">2. 데이터 암호화 및 접근 제한</button><br><button onclick="showAnswer('answer40')">3. 백업</button><br><button onclick="showAnswer('answer40')">4. 장애 복구</button><br>
+        <div id="answer40" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 41</h2>
+        <p>가용성의 예시는?</p>
+        <button onclick="showAnswer('answer41')">1. 디지털 서명</button><br><button onclick="showAnswer('answer41')">2. 장애 복구</button><br><button onclick="showAnswer('answer41')">3. 암호화</button><br><button onclick="showAnswer('answer41')">4. 인증서 관리</button><br>
+        <div id="answer41" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 42</h2>
+        <p>인증(Authentication)은 무엇인가?</p>
+        <button onclick="showAnswer('answer42')">1. 데이터 암호화</button><br><button onclick="showAnswer('answer42')">2. 사용자 식별 확인</button><br><button onclick="showAnswer('answer42')">3. 디지털 서명</button><br><button onclick="showAnswer('answer42')">4. 무결성 검증</button><br>
+        <div id="answer42" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 101 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer101')">1. seed</button><br>
+        <button onclick="showAnswer('answer101')">2. random_state</button><br>
+        <button onclick="showAnswer('answer101')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer101')">4. split_number</button><br>
+        <div id="answer101" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 102 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer102')">1. seed</button><br>
+        <button onclick="showAnswer('answer102')">2. random_state</button><br>
+        <button onclick="showAnswer('answer102')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer102')">4. split_number</button><br>
+        <div id="answer102" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 103 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer103')">1. seed</button><br>
+        <button onclick="showAnswer('answer103')">2. random_state</button><br>
+        <button onclick="showAnswer('answer103')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer103')">4. split_number</button><br>
+        <div id="answer103" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 104 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer104')">1. seed</button><br>
+        <button onclick="showAnswer('answer104')">2. random_state</button><br>
+        <button onclick="showAnswer('answer104')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer104')">4. split_number</button><br>
+        <div id="answer104" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 105 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer105')">1. seed</button><br>
+        <button onclick="showAnswer('answer105')">2. random_state</button><br>
+        <button onclick="showAnswer('answer105')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer105')">4. split_number</button><br>
+        <div id="answer105" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 106 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer106')">1. seed</button><br>
+        <button onclick="showAnswer('answer106')">2. random_state</button><br>
+        <button onclick="showAnswer('answer106')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer106')">4. split_number</button><br>
+        <div id="answer106" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 107 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer107')">1. seed</button><br>
+        <button onclick="showAnswer('answer107')">2. random_state</button><br>
+        <button onclick="showAnswer('answer107')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer107')">4. split_number</button><br>
+        <div id="answer107" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 108 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer108')">1. seed</button><br>
+        <button onclick="showAnswer('answer108')">2. random_state</button><br>
+        <button onclick="showAnswer('answer108')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer108')">4. split_number</button><br>
+        <div id="answer108" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 109 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer109')">1. seed</button><br>
+        <button onclick="showAnswer('answer109')">2. random_state</button><br>
+        <button onclick="showAnswer('answer109')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer109')">4. split_number</button><br>
+        <div id="answer109" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 110 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer110')">1. seed</button><br>
+        <button onclick="showAnswer('answer110')">2. random_state</button><br>
+        <button onclick="showAnswer('answer110')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer110')">4. split_number</button><br>
+        <div id="answer110" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 111 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer111')">1. seed</button><br>
+        <button onclick="showAnswer('answer111')">2. random_state</button><br>
+        <button onclick="showAnswer('answer111')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer111')">4. split_number</button><br>
+        <div id="answer111" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 112 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer112')">1. seed</button><br>
+        <button onclick="showAnswer('answer112')">2. random_state</button><br>
+        <button onclick="showAnswer('answer112')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer112')">4. split_number</button><br>
+        <div id="answer112" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 113 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer113')">1. seed</button><br>
+        <button onclick="showAnswer('answer113')">2. random_state</button><br>
+        <button onclick="showAnswer('answer113')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer113')">4. split_number</button><br>
+        <div id="answer113" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 114 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer114')">1. seed</button><br>
+        <button onclick="showAnswer('answer114')">2. random_state</button><br>
+        <button onclick="showAnswer('answer114')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer114')">4. split_number</button><br>
+        <div id="answer114" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 115 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer115')">1. seed</button><br>
+        <button onclick="showAnswer('answer115')">2. random_state</button><br>
+        <button onclick="showAnswer('answer115')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer115')">4. split_number</button><br>
+        <div id="answer115" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 116 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer116')">1. seed</button><br>
+        <button onclick="showAnswer('answer116')">2. random_state</button><br>
+        <button onclick="showAnswer('answer116')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer116')">4. split_number</button><br>
+        <div id="answer116" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 117 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer117')">1. seed</button><br>
+        <button onclick="showAnswer('answer117')">2. random_state</button><br>
+        <button onclick="showAnswer('answer117')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer117')">4. split_number</button><br>
+        <div id="answer117" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 118 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer118')">1. seed</button><br>
+        <button onclick="showAnswer('answer118')">2. random_state</button><br>
+        <button onclick="showAnswer('answer118')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer118')">4. split_number</button><br>
+        <div id="answer118" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 119 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer119')">1. seed</button><br>
+        <button onclick="showAnswer('answer119')">2. random_state</button><br>
+        <button onclick="showAnswer('answer119')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer119')">4. split_number</button><br>
+        <div id="answer119" class="answer">정답: 2</div>
+    </div>
+    
+    <div class="question">
+        <h2>문제 120 (코드 빈칸)</h2>
+        <p>다음 코드의 빈칸에 들어갈 알맞은 코드를 선택하세요.</p>
+        <div class="code-block">
+from sklearn.model_selection import train_test_split<br>
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, ________=0)
+        </div>
+        <button onclick="showAnswer('answer120')">1. seed</button><br>
+        <button onclick="showAnswer('answer120')">2. random_state</button><br>
+        <button onclick="showAnswer('answer120')">3. shuffle_state</button><br>
+        <button onclick="showAnswer('answer120')">4. split_number</button><br>
+        <div id="answer120" class="answer">정답: 2</div>
+    </div>
+    
+</body>
+</html>
