@@ -1,0 +1,630 @@
+<html><head><meta charset='UTF-8'><title>100문제 객관식</title>
+
+<style>
+.correct { color: green; font-weight: bold; }
+.incorrect { color: red; font-weight: bold; }
+</style>
+<script>
+function handleSelect(qid, correct) {
+    const radios = document.getElementsByName(qid);
+    let selected = -1;
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            selected = parseInt(radios[i].value);
+            break;
+        }
+    }
+    const result = document.getElementById("result_" + qid);
+    if (selected === correct) {
+        result.innerHTML = "정답입니다!";
+        result.className = "correct";
+    } else {
+        result.innerHTML = "틀렸습니다!";
+        result.className = "incorrect";
+    }
+}
+</script>
+</head><body>
+<h1>세종 1학년 1학기 기말 - 객관식 100문제</h1>
+
+<div><p><strong>1. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q1' value='0' onclick='handleSelect("q1", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q1' value='1' onclick='handleSelect("q1", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q1' value='2' onclick='handleSelect("q1", 2)'> KNN</label><br>
+<label><input type='radio' name='q1' value='3' onclick='handleSelect("q1", 2)'> 데이터 시각화</label><br>
+<p id='result_q1'></p><br></div>
+<div><p><strong>2. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q2' value='0' onclick='handleSelect("q2", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q2' value='1' onclick='handleSelect("q2", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q2' value='2' onclick='handleSelect("q2", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q2' value='3' onclick='handleSelect("q2", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q2'></p><br></div>
+<div><p><strong>3. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q3' value='0' onclick='handleSelect("q3", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q3' value='1' onclick='handleSelect("q3", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q3' value='2' onclick='handleSelect("q3", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q3' value='3' onclick='handleSelect("q3", 3)'> 정밀도</label><br>
+<p id='result_q3'></p><br></div>
+<div><p><strong>4. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q4' value='0' onclick='handleSelect("q4", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q4' value='1' onclick='handleSelect("q4", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q4' value='2' onclick='handleSelect("q4", 2)'> KNN</label><br>
+<label><input type='radio' name='q4' value='3' onclick='handleSelect("q4", 2)'> 데이터 시각화</label><br>
+<p id='result_q4'></p><br></div>
+<div><p><strong>5. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q5' value='0' onclick='handleSelect("q5", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q5' value='1' onclick='handleSelect("q5", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q5' value='2' onclick='handleSelect("q5", 1)'> 무결성</label><br>
+<label><input type='radio' name='q5' value='3' onclick='handleSelect("q5", 1)'> 부인 방지</label><br>
+<p id='result_q5'></p><br></div>
+<div><p><strong>6. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q6' value='0' onclick='handleSelect("q6", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q6' value='1' onclick='handleSelect("q6", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q6' value='2' onclick='handleSelect("q6", 1)'> 무결성</label><br>
+<label><input type='radio' name='q6' value='3' onclick='handleSelect("q6", 1)'> 부인 방지</label><br>
+<p id='result_q6'></p><br></div>
+<div><p><strong>7. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q7' value='0' onclick='handleSelect("q7", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q7' value='1' onclick='handleSelect("q7", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q7' value='2' onclick='handleSelect("q7", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q7' value='3' onclick='handleSelect("q7", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q7'></p><br></div>
+<div><p><strong>8. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q8' value='0' onclick='handleSelect("q8", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q8' value='1' onclick='handleSelect("q8", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q8' value='2' onclick='handleSelect("q8", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q8' value='3' onclick='handleSelect("q8", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q8'></p><br></div>
+<div><p><strong>9. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q9' value='0' onclick='handleSelect("q9", 3)'> MAE</label><br>
+<label><input type='radio' name='q9' value='1' onclick='handleSelect("q9", 3)'> RMSE</label><br>
+<label><input type='radio' name='q9' value='2' onclick='handleSelect("q9", 3)'> R2</label><br>
+<label><input type='radio' name='q9' value='3' onclick='handleSelect("q9", 3)'> 정밀도</label><br>
+<p id='result_q9'></p><br></div>
+<div><p><strong>10. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q10' value='0' onclick='handleSelect("q10", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q10' value='1' onclick='handleSelect("q10", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q10' value='2' onclick='handleSelect("q10", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q10' value='3' onclick='handleSelect("q10", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q10'></p><br></div>
+<div><p><strong>11. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q11' value='0' onclick='handleSelect("q11", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q11' value='1' onclick='handleSelect("q11", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q11' value='2' onclick='handleSelect("q11", 2)'> KNN</label><br>
+<label><input type='radio' name='q11' value='3' onclick='handleSelect("q11", 2)'> 데이터 시각화</label><br>
+<p id='result_q11'></p><br></div>
+<div><p><strong>12. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q12' value='0' onclick='handleSelect("q12", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q12' value='1' onclick='handleSelect("q12", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q12' value='2' onclick='handleSelect("q12", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q12' value='3' onclick='handleSelect("q12", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q12'></p><br></div>
+<div><p><strong>13. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q13' value='0' onclick='handleSelect("q13", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q13' value='1' onclick='handleSelect("q13", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q13' value='2' onclick='handleSelect("q13", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q13' value='3' onclick='handleSelect("q13", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q13'></p><br></div>
+<div><p><strong>14. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q14' value='0' onclick='handleSelect("q14", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q14' value='1' onclick='handleSelect("q14", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q14' value='2' onclick='handleSelect("q14", 2)'> KNN</label><br>
+<label><input type='radio' name='q14' value='3' onclick='handleSelect("q14", 2)'> 데이터 시각화</label><br>
+<p id='result_q14'></p><br></div>
+<div><p><strong>15. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q15' value='0' onclick='handleSelect("q15", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q15' value='1' onclick='handleSelect("q15", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q15' value='2' onclick='handleSelect("q15", 2)'> KNN</label><br>
+<label><input type='radio' name='q15' value='3' onclick='handleSelect("q15", 2)'> 데이터 시각화</label><br>
+<p id='result_q15'></p><br></div>
+<div><p><strong>16. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q16' value='0' onclick='handleSelect("q16", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q16' value='1' onclick='handleSelect("q16", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q16' value='2' onclick='handleSelect("q16", 2)'> KNN</label><br>
+<label><input type='radio' name='q16' value='3' onclick='handleSelect("q16", 2)'> 데이터 시각화</label><br>
+<p id='result_q16'></p><br></div>
+<div><p><strong>17. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q17' value='0' onclick='handleSelect("q17", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q17' value='1' onclick='handleSelect("q17", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q17' value='2' onclick='handleSelect("q17", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q17' value='3' onclick='handleSelect("q17", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q17'></p><br></div>
+<div><p><strong>18. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q18' value='0' onclick='handleSelect("q18", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q18' value='1' onclick='handleSelect("q18", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q18' value='2' onclick='handleSelect("q18", 2)'> KNN</label><br>
+<label><input type='radio' name='q18' value='3' onclick='handleSelect("q18", 2)'> 데이터 시각화</label><br>
+<p id='result_q18'></p><br></div>
+<div><p><strong>19. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q19' value='0' onclick='handleSelect("q19", 3)'> MAE</label><br>
+<label><input type='radio' name='q19' value='1' onclick='handleSelect("q19", 3)'> RMSE</label><br>
+<label><input type='radio' name='q19' value='2' onclick='handleSelect("q19", 3)'> R2</label><br>
+<label><input type='radio' name='q19' value='3' onclick='handleSelect("q19", 3)'> 정밀도</label><br>
+<p id='result_q19'></p><br></div>
+<div><p><strong>20. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q20' value='0' onclick='handleSelect("q20", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q20' value='1' onclick='handleSelect("q20", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q20' value='2' onclick='handleSelect("q20", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q20' value='3' onclick='handleSelect("q20", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q20'></p><br></div>
+<div><p><strong>21. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q21' value='0' onclick='handleSelect("q21", 3)'> MAE</label><br>
+<label><input type='radio' name='q21' value='1' onclick='handleSelect("q21", 3)'> RMSE</label><br>
+<label><input type='radio' name='q21' value='2' onclick='handleSelect("q21", 3)'> R2</label><br>
+<label><input type='radio' name='q21' value='3' onclick='handleSelect("q21", 3)'> 정밀도</label><br>
+<p id='result_q21'></p><br></div>
+<div><p><strong>22. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q22' value='0' onclick='handleSelect("q22", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q22' value='1' onclick='handleSelect("q22", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q22' value='2' onclick='handleSelect("q22", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q22' value='3' onclick='handleSelect("q22", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q22'></p><br></div>
+<div><p><strong>23. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q23' value='0' onclick='handleSelect("q23", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q23' value='1' onclick='handleSelect("q23", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q23' value='2' onclick='handleSelect("q23", 1)'> 무결성</label><br>
+<label><input type='radio' name='q23' value='3' onclick='handleSelect("q23", 1)'> 부인 방지</label><br>
+<p id='result_q23'></p><br></div>
+<div><p><strong>24. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q24' value='0' onclick='handleSelect("q24", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q24' value='1' onclick='handleSelect("q24", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q24' value='2' onclick='handleSelect("q24", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q24' value='3' onclick='handleSelect("q24", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q24'></p><br></div>
+<div><p><strong>25. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q25' value='0' onclick='handleSelect("q25", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q25' value='1' onclick='handleSelect("q25", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q25' value='2' onclick='handleSelect("q25", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q25' value='3' onclick='handleSelect("q25", 3)'> 정밀도</label><br>
+<p id='result_q25'></p><br></div>
+<div><p><strong>26. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q26' value='0' onclick='handleSelect("q26", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q26' value='1' onclick='handleSelect("q26", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q26' value='2' onclick='handleSelect("q26", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q26' value='3' onclick='handleSelect("q26", 3)'> 정밀도</label><br>
+<p id='result_q26'></p><br></div>
+<div><p><strong>27. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q27' value='0' onclick='handleSelect("q27", 3)'> MAE</label><br>
+<label><input type='radio' name='q27' value='1' onclick='handleSelect("q27", 3)'> RMSE</label><br>
+<label><input type='radio' name='q27' value='2' onclick='handleSelect("q27", 3)'> R2</label><br>
+<label><input type='radio' name='q27' value='3' onclick='handleSelect("q27", 3)'> 정밀도</label><br>
+<p id='result_q27'></p><br></div>
+<div><p><strong>28. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q28' value='0' onclick='handleSelect("q28", 3)'> MAE</label><br>
+<label><input type='radio' name='q28' value='1' onclick='handleSelect("q28", 3)'> RMSE</label><br>
+<label><input type='radio' name='q28' value='2' onclick='handleSelect("q28", 3)'> R2</label><br>
+<label><input type='radio' name='q28' value='3' onclick='handleSelect("q28", 3)'> 정밀도</label><br>
+<p id='result_q28'></p><br></div>
+<div><p><strong>29. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q29' value='0' onclick='handleSelect("q29", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q29' value='1' onclick='handleSelect("q29", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q29' value='2' onclick='handleSelect("q29", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q29' value='3' onclick='handleSelect("q29", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q29'></p><br></div>
+<div><p><strong>30. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q30' value='0' onclick='handleSelect("q30", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q30' value='1' onclick='handleSelect("q30", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q30' value='2' onclick='handleSelect("q30", 2)'> KNN</label><br>
+<label><input type='radio' name='q30' value='3' onclick='handleSelect("q30", 2)'> 데이터 시각화</label><br>
+<p id='result_q30'></p><br></div>
+<div><p><strong>31. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q31' value='0' onclick='handleSelect("q31", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q31' value='1' onclick='handleSelect("q31", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q31' value='2' onclick='handleSelect("q31", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q31' value='3' onclick='handleSelect("q31", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q31'></p><br></div>
+<div><p><strong>32. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q32' value='0' onclick='handleSelect("q32", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q32' value='1' onclick='handleSelect("q32", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q32' value='2' onclick='handleSelect("q32", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q32' value='3' onclick='handleSelect("q32", 3)'> 정밀도</label><br>
+<p id='result_q32'></p><br></div>
+<div><p><strong>33. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q33' value='0' onclick='handleSelect("q33", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q33' value='1' onclick='handleSelect("q33", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q33' value='2' onclick='handleSelect("q33", 2)'> KNN</label><br>
+<label><input type='radio' name='q33' value='3' onclick='handleSelect("q33", 2)'> 데이터 시각화</label><br>
+<p id='result_q33'></p><br></div>
+<div><p><strong>34. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q34' value='0' onclick='handleSelect("q34", 3)'> MAE</label><br>
+<label><input type='radio' name='q34' value='1' onclick='handleSelect("q34", 3)'> RMSE</label><br>
+<label><input type='radio' name='q34' value='2' onclick='handleSelect("q34", 3)'> R2</label><br>
+<label><input type='radio' name='q34' value='3' onclick='handleSelect("q34", 3)'> 정밀도</label><br>
+<p id='result_q34'></p><br></div>
+<div><p><strong>35. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q35' value='0' onclick='handleSelect("q35", 3)'> MAE</label><br>
+<label><input type='radio' name='q35' value='1' onclick='handleSelect("q35", 3)'> RMSE</label><br>
+<label><input type='radio' name='q35' value='2' onclick='handleSelect("q35", 3)'> R2</label><br>
+<label><input type='radio' name='q35' value='3' onclick='handleSelect("q35", 3)'> 정밀도</label><br>
+<p id='result_q35'></p><br></div>
+<div><p><strong>36. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q36' value='0' onclick='handleSelect("q36", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q36' value='1' onclick='handleSelect("q36", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q36' value='2' onclick='handleSelect("q36", 1)'> 무결성</label><br>
+<label><input type='radio' name='q36' value='3' onclick='handleSelect("q36", 1)'> 부인 방지</label><br>
+<p id='result_q36'></p><br></div>
+<div><p><strong>37. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q37' value='0' onclick='handleSelect("q37", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q37' value='1' onclick='handleSelect("q37", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q37' value='2' onclick='handleSelect("q37", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q37' value='3' onclick='handleSelect("q37", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q37'></p><br></div>
+<div><p><strong>38. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q38' value='0' onclick='handleSelect("q38", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q38' value='1' onclick='handleSelect("q38", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q38' value='2' onclick='handleSelect("q38", 1)'> 무결성</label><br>
+<label><input type='radio' name='q38' value='3' onclick='handleSelect("q38", 1)'> 부인 방지</label><br>
+<p id='result_q38'></p><br></div>
+<div><p><strong>39. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q39' value='0' onclick='handleSelect("q39", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q39' value='1' onclick='handleSelect("q39", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q39' value='2' onclick='handleSelect("q39", 1)'> 무결성</label><br>
+<label><input type='radio' name='q39' value='3' onclick='handleSelect("q39", 1)'> 부인 방지</label><br>
+<p id='result_q39'></p><br></div>
+<div><p><strong>40. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q40' value='0' onclick='handleSelect("q40", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q40' value='1' onclick='handleSelect("q40", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q40' value='2' onclick='handleSelect("q40", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q40' value='3' onclick='handleSelect("q40", 3)'> 정밀도</label><br>
+<p id='result_q40'></p><br></div>
+<div><p><strong>41. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q41' value='0' onclick='handleSelect("q41", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q41' value='1' onclick='handleSelect("q41", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q41' value='2' onclick='handleSelect("q41", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q41' value='3' onclick='handleSelect("q41", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q41'></p><br></div>
+<div><p><strong>42. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q42' value='0' onclick='handleSelect("q42", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q42' value='1' onclick='handleSelect("q42", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q42' value='2' onclick='handleSelect("q42", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q42' value='3' onclick='handleSelect("q42", 3)'> 정밀도</label><br>
+<p id='result_q42'></p><br></div>
+<div><p><strong>43. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q43' value='0' onclick='handleSelect("q43", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q43' value='1' onclick='handleSelect("q43", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q43' value='2' onclick='handleSelect("q43", 1)'> 무결성</label><br>
+<label><input type='radio' name='q43' value='3' onclick='handleSelect("q43", 1)'> 부인 방지</label><br>
+<p id='result_q43'></p><br></div>
+<div><p><strong>44. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q44' value='0' onclick='handleSelect("q44", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q44' value='1' onclick='handleSelect("q44", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q44' value='2' onclick='handleSelect("q44", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q44' value='3' onclick='handleSelect("q44", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q44'></p><br></div>
+<div><p><strong>45. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q45' value='0' onclick='handleSelect("q45", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q45' value='1' onclick='handleSelect("q45", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q45' value='2' onclick='handleSelect("q45", 1)'> 무결성</label><br>
+<label><input type='radio' name='q45' value='3' onclick='handleSelect("q45", 1)'> 부인 방지</label><br>
+<p id='result_q45'></p><br></div>
+<div><p><strong>46. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q46' value='0' onclick='handleSelect("q46", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q46' value='1' onclick='handleSelect("q46", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q46' value='2' onclick='handleSelect("q46", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q46' value='3' onclick='handleSelect("q46", 3)'> 정밀도</label><br>
+<p id='result_q46'></p><br></div>
+<div><p><strong>47. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q47' value='0' onclick='handleSelect("q47", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q47' value='1' onclick='handleSelect("q47", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q47' value='2' onclick='handleSelect("q47", 2)'> KNN</label><br>
+<label><input type='radio' name='q47' value='3' onclick='handleSelect("q47", 2)'> 데이터 시각화</label><br>
+<p id='result_q47'></p><br></div>
+<div><p><strong>48. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q48' value='0' onclick='handleSelect("q48", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q48' value='1' onclick='handleSelect("q48", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q48' value='2' onclick='handleSelect("q48", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q48' value='3' onclick='handleSelect("q48", 3)'> 정밀도</label><br>
+<p id='result_q48'></p><br></div>
+<div><p><strong>49. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q49' value='0' onclick='handleSelect("q49", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q49' value='1' onclick='handleSelect("q49", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q49' value='2' onclick='handleSelect("q49", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q49' value='3' onclick='handleSelect("q49", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q49'></p><br></div>
+<div><p><strong>50. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q50' value='0' onclick='handleSelect("q50", 3)'> MAE</label><br>
+<label><input type='radio' name='q50' value='1' onclick='handleSelect("q50", 3)'> RMSE</label><br>
+<label><input type='radio' name='q50' value='2' onclick='handleSelect("q50", 3)'> R2</label><br>
+<label><input type='radio' name='q50' value='3' onclick='handleSelect("q50", 3)'> 정밀도</label><br>
+<p id='result_q50'></p><br></div>
+<div><p><strong>51. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q51' value='0' onclick='handleSelect("q51", 3)'> MAE</label><br>
+<label><input type='radio' name='q51' value='1' onclick='handleSelect("q51", 3)'> RMSE</label><br>
+<label><input type='radio' name='q51' value='2' onclick='handleSelect("q51", 3)'> R2</label><br>
+<label><input type='radio' name='q51' value='3' onclick='handleSelect("q51", 3)'> 정밀도</label><br>
+<p id='result_q51'></p><br></div>
+<div><p><strong>52. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q52' value='0' onclick='handleSelect("q52", 3)'> MAE</label><br>
+<label><input type='radio' name='q52' value='1' onclick='handleSelect("q52", 3)'> RMSE</label><br>
+<label><input type='radio' name='q52' value='2' onclick='handleSelect("q52", 3)'> R2</label><br>
+<label><input type='radio' name='q52' value='3' onclick='handleSelect("q52", 3)'> 정밀도</label><br>
+<p id='result_q52'></p><br></div>
+<div><p><strong>53. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q53' value='0' onclick='handleSelect("q53", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q53' value='1' onclick='handleSelect("q53", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q53' value='2' onclick='handleSelect("q53", 1)'> 무결성</label><br>
+<label><input type='radio' name='q53' value='3' onclick='handleSelect("q53", 1)'> 부인 방지</label><br>
+<p id='result_q53'></p><br></div>
+<div><p><strong>54. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q54' value='0' onclick='handleSelect("q54", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q54' value='1' onclick='handleSelect("q54", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q54' value='2' onclick='handleSelect("q54", 1)'> 무결성</label><br>
+<label><input type='radio' name='q54' value='3' onclick='handleSelect("q54", 1)'> 부인 방지</label><br>
+<p id='result_q54'></p><br></div>
+<div><p><strong>55. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q55' value='0' onclick='handleSelect("q55", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q55' value='1' onclick='handleSelect("q55", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q55' value='2' onclick='handleSelect("q55", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q55' value='3' onclick='handleSelect("q55", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q55'></p><br></div>
+<div><p><strong>56. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q56' value='0' onclick='handleSelect("q56", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q56' value='1' onclick='handleSelect("q56", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q56' value='2' onclick='handleSelect("q56", 2)'> KNN</label><br>
+<label><input type='radio' name='q56' value='3' onclick='handleSelect("q56", 2)'> 데이터 시각화</label><br>
+<p id='result_q56'></p><br></div>
+<div><p><strong>57. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q57' value='0' onclick='handleSelect("q57", 3)'> MAE</label><br>
+<label><input type='radio' name='q57' value='1' onclick='handleSelect("q57", 3)'> RMSE</label><br>
+<label><input type='radio' name='q57' value='2' onclick='handleSelect("q57", 3)'> R2</label><br>
+<label><input type='radio' name='q57' value='3' onclick='handleSelect("q57", 3)'> 정밀도</label><br>
+<p id='result_q57'></p><br></div>
+<div><p><strong>58. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q58' value='0' onclick='handleSelect("q58", 3)'> MAE</label><br>
+<label><input type='radio' name='q58' value='1' onclick='handleSelect("q58", 3)'> RMSE</label><br>
+<label><input type='radio' name='q58' value='2' onclick='handleSelect("q58", 3)'> R2</label><br>
+<label><input type='radio' name='q58' value='3' onclick='handleSelect("q58", 3)'> 정밀도</label><br>
+<p id='result_q58'></p><br></div>
+<div><p><strong>59. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q59' value='0' onclick='handleSelect("q59", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q59' value='1' onclick='handleSelect("q59", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q59' value='2' onclick='handleSelect("q59", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q59' value='3' onclick='handleSelect("q59", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q59'></p><br></div>
+<div><p><strong>60. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q60' value='0' onclick='handleSelect("q60", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q60' value='1' onclick='handleSelect("q60", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q60' value='2' onclick='handleSelect("q60", 2)'> KNN</label><br>
+<label><input type='radio' name='q60' value='3' onclick='handleSelect("q60", 2)'> 데이터 시각화</label><br>
+<p id='result_q60'></p><br></div>
+<div><p><strong>61. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q61' value='0' onclick='handleSelect("q61", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q61' value='1' onclick='handleSelect("q61", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q61' value='2' onclick='handleSelect("q61", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q61' value='3' onclick='handleSelect("q61", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q61'></p><br></div>
+<div><p><strong>62. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q62' value='0' onclick='handleSelect("q62", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q62' value='1' onclick='handleSelect("q62", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q62' value='2' onclick='handleSelect("q62", 2)'> KNN</label><br>
+<label><input type='radio' name='q62' value='3' onclick='handleSelect("q62", 2)'> 데이터 시각화</label><br>
+<p id='result_q62'></p><br></div>
+<div><p><strong>63. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q63' value='0' onclick='handleSelect("q63", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q63' value='1' onclick='handleSelect("q63", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q63' value='2' onclick='handleSelect("q63", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q63' value='3' onclick='handleSelect("q63", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q63'></p><br></div>
+<div><p><strong>64. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q64' value='0' onclick='handleSelect("q64", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q64' value='1' onclick='handleSelect("q64", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q64' value='2' onclick='handleSelect("q64", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q64' value='3' onclick='handleSelect("q64", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q64'></p><br></div>
+<div><p><strong>65. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q65' value='0' onclick='handleSelect("q65", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q65' value='1' onclick='handleSelect("q65", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q65' value='2' onclick='handleSelect("q65", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q65' value='3' onclick='handleSelect("q65", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q65'></p><br></div>
+<div><p><strong>66. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q66' value='0' onclick='handleSelect("q66", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q66' value='1' onclick='handleSelect("q66", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q66' value='2' onclick='handleSelect("q66", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q66' value='3' onclick='handleSelect("q66", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q66'></p><br></div>
+<div><p><strong>67. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q67' value='0' onclick='handleSelect("q67", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q67' value='1' onclick='handleSelect("q67", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q67' value='2' onclick='handleSelect("q67", 1)'> 무결성</label><br>
+<label><input type='radio' name='q67' value='3' onclick='handleSelect("q67", 1)'> 부인 방지</label><br>
+<p id='result_q67'></p><br></div>
+<div><p><strong>68. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q68' value='0' onclick='handleSelect("q68", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q68' value='1' onclick='handleSelect("q68", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q68' value='2' onclick='handleSelect("q68", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q68' value='3' onclick='handleSelect("q68", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q68'></p><br></div>
+<div><p><strong>69. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q69' value='0' onclick='handleSelect("q69", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q69' value='1' onclick='handleSelect("q69", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q69' value='2' onclick='handleSelect("q69", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q69' value='3' onclick='handleSelect("q69", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q69'></p><br></div>
+<div><p><strong>70. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q70' value='0' onclick='handleSelect("q70", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q70' value='1' onclick='handleSelect("q70", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q70' value='2' onclick='handleSelect("q70", 2)'> KNN</label><br>
+<label><input type='radio' name='q70' value='3' onclick='handleSelect("q70", 2)'> 데이터 시각화</label><br>
+<p id='result_q70'></p><br></div>
+<div><p><strong>71. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q71' value='0' onclick='handleSelect("q71", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q71' value='1' onclick='handleSelect("q71", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q71' value='2' onclick='handleSelect("q71", 1)'> 무결성</label><br>
+<label><input type='radio' name='q71' value='3' onclick='handleSelect("q71", 1)'> 부인 방지</label><br>
+<p id='result_q71'></p><br></div>
+<div><p><strong>72. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q72' value='0' onclick='handleSelect("q72", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q72' value='1' onclick='handleSelect("q72", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q72' value='2' onclick='handleSelect("q72", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q72' value='3' onclick='handleSelect("q72", 3)'> 정밀도</label><br>
+<p id='result_q72'></p><br></div>
+<div><p><strong>73. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q73' value='0' onclick='handleSelect("q73", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q73' value='1' onclick='handleSelect("q73", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q73' value='2' onclick='handleSelect("q73", 1)'> 무결성</label><br>
+<label><input type='radio' name='q73' value='3' onclick='handleSelect("q73", 1)'> 부인 방지</label><br>
+<p id='result_q73'></p><br></div>
+<div><p><strong>74. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q74' value='0' onclick='handleSelect("q74", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q74' value='1' onclick='handleSelect("q74", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q74' value='2' onclick='handleSelect("q74", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q74' value='3' onclick='handleSelect("q74", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q74'></p><br></div>
+<div><p><strong>75. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q75' value='0' onclick='handleSelect("q75", 3)'> MAE</label><br>
+<label><input type='radio' name='q75' value='1' onclick='handleSelect("q75", 3)'> RMSE</label><br>
+<label><input type='radio' name='q75' value='2' onclick='handleSelect("q75", 3)'> R2</label><br>
+<label><input type='radio' name='q75' value='3' onclick='handleSelect("q75", 3)'> 정밀도</label><br>
+<p id='result_q75'></p><br></div>
+<div><p><strong>76. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q76' value='0' onclick='handleSelect("q76", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q76' value='1' onclick='handleSelect("q76", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q76' value='2' onclick='handleSelect("q76", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q76' value='3' onclick='handleSelect("q76", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q76'></p><br></div>
+<div><p><strong>77. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q77' value='0' onclick='handleSelect("q77", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q77' value='1' onclick='handleSelect("q77", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q77' value='2' onclick='handleSelect("q77", 2)'> KNN</label><br>
+<label><input type='radio' name='q77' value='3' onclick='handleSelect("q77", 2)'> 데이터 시각화</label><br>
+<p id='result_q77'></p><br></div>
+<div><p><strong>78. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q78' value='0' onclick='handleSelect("q78", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q78' value='1' onclick='handleSelect("q78", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q78' value='2' onclick='handleSelect("q78", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q78' value='3' onclick='handleSelect("q78", 3)'> 정밀도</label><br>
+<p id='result_q78'></p><br></div>
+<div><p><strong>79. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q79' value='0' onclick='handleSelect("q79", 3)'> MAE</label><br>
+<label><input type='radio' name='q79' value='1' onclick='handleSelect("q79", 3)'> RMSE</label><br>
+<label><input type='radio' name='q79' value='2' onclick='handleSelect("q79", 3)'> R2</label><br>
+<label><input type='radio' name='q79' value='3' onclick='handleSelect("q79", 3)'> 정밀도</label><br>
+<p id='result_q79'></p><br></div>
+<div><p><strong>80. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q80' value='0' onclick='handleSelect("q80", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q80' value='1' onclick='handleSelect("q80", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q80' value='2' onclick='handleSelect("q80", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q80' value='3' onclick='handleSelect("q80", 3)'> 정밀도</label><br>
+<p id='result_q80'></p><br></div>
+<div><p><strong>81. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q81' value='0' onclick='handleSelect("q81", 3)'> MAE</label><br>
+<label><input type='radio' name='q81' value='1' onclick='handleSelect("q81", 3)'> RMSE</label><br>
+<label><input type='radio' name='q81' value='2' onclick='handleSelect("q81", 3)'> R2</label><br>
+<label><input type='radio' name='q81' value='3' onclick='handleSelect("q81", 3)'> 정밀도</label><br>
+<p id='result_q81'></p><br></div>
+<div><p><strong>82. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q82' value='0' onclick='handleSelect("q82", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q82' value='1' onclick='handleSelect("q82", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q82' value='2' onclick='handleSelect("q82", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q82' value='3' onclick='handleSelect("q82", 3)'> 정밀도</label><br>
+<p id='result_q82'></p><br></div>
+<div><p><strong>83. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q83' value='0' onclick='handleSelect("q83", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q83' value='1' onclick='handleSelect("q83", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q83' value='2' onclick='handleSelect("q83", 2)'> KNN</label><br>
+<label><input type='radio' name='q83' value='3' onclick='handleSelect("q83", 2)'> 데이터 시각화</label><br>
+<p id='result_q83'></p><br></div>
+<div><p><strong>84. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q84' value='0' onclick='handleSelect("q84", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q84' value='1' onclick='handleSelect("q84", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q84' value='2' onclick='handleSelect("q84", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q84' value='3' onclick='handleSelect("q84", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q84'></p><br></div>
+<div><p><strong>85. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q85' value='0' onclick='handleSelect("q85", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q85' value='1' onclick='handleSelect("q85", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q85' value='2' onclick='handleSelect("q85", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q85' value='3' onclick='handleSelect("q85", 3)'> 정밀도</label><br>
+<p id='result_q85'></p><br></div>
+<div><p><strong>86. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q86' value='0' onclick='handleSelect("q86", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q86' value='1' onclick='handleSelect("q86", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q86' value='2' onclick='handleSelect("q86", 1)'> 무결성</label><br>
+<label><input type='radio' name='q86' value='3' onclick='handleSelect("q86", 1)'> 부인 방지</label><br>
+<p id='result_q86'></p><br></div>
+<div><p><strong>87. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q87' value='0' onclick='handleSelect("q87", 3)'> MAE</label><br>
+<label><input type='radio' name='q87' value='1' onclick='handleSelect("q87", 3)'> RMSE</label><br>
+<label><input type='radio' name='q87' value='2' onclick='handleSelect("q87", 3)'> R2</label><br>
+<label><input type='radio' name='q87' value='3' onclick='handleSelect("q87", 3)'> 정밀도</label><br>
+<p id='result_q87'></p><br></div>
+<div><p><strong>88. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q88' value='0' onclick='handleSelect("q88", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q88' value='1' onclick='handleSelect("q88", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q88' value='2' onclick='handleSelect("q88", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q88' value='3' onclick='handleSelect("q88", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q88'></p><br></div>
+<div><p><strong>89. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q89' value='0' onclick='handleSelect("q89", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q89' value='1' onclick='handleSelect("q89", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q89' value='2' onclick='handleSelect("q89", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q89' value='3' onclick='handleSelect("q89", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q89'></p><br></div>
+<div><p><strong>90. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q90' value='0' onclick='handleSelect("q90", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q90' value='1' onclick='handleSelect("q90", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q90' value='2' onclick='handleSelect("q90", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q90' value='3' onclick='handleSelect("q90", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q90'></p><br></div>
+<div><p><strong>91. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q91' value='0' onclick='handleSelect("q91", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q91' value='1' onclick='handleSelect("q91", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q91' value='2' onclick='handleSelect("q91", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q91' value='3' onclick='handleSelect("q91", 3)'> 정밀도</label><br>
+<p id='result_q91'></p><br></div>
+<div><p><strong>92. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q92' value='0' onclick='handleSelect("q92", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q92' value='1' onclick='handleSelect("q92", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q92' value='2' onclick='handleSelect("q92", 1)'> 무결성</label><br>
+<label><input type='radio' name='q92' value='3' onclick='handleSelect("q92", 1)'> 부인 방지</label><br>
+<p id='result_q92'></p><br></div>
+<div><p><strong>93. 정보 보안의 5요소에 해당하지 않는 것은?</strong></p>
+<label><input type='radio' name='q93' value='0' onclick='handleSelect("q93", 1)'> 기밀성</label><br>
+<label><input type='radio' name='q93' value='1' onclick='handleSelect("q93", 1)'> 정밀도</label><br>
+<label><input type='radio' name='q93' value='2' onclick='handleSelect("q93", 1)'> 무결성</label><br>
+<label><input type='radio' name='q93' value='3' onclick='handleSelect("q93", 1)'> 부인 방지</label><br>
+<p id='result_q93'></p><br></div>
+<div><p><strong>94. 회귀 모델 성능 평가 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q94' value='0' onclick='handleSelect("q94", 3)'> MAE</label><br>
+<label><input type='radio' name='q94' value='1' onclick='handleSelect("q94", 3)'> RMSE</label><br>
+<label><input type='radio' name='q94' value='2' onclick='handleSelect("q94", 3)'> R2</label><br>
+<label><input type='radio' name='q94' value='3' onclick='handleSelect("q94", 3)'> 정밀도</label><br>
+<p id='result_q94'></p><br></div>
+<div><p><strong>95. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q95' value='0' onclick='handleSelect("q95", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q95' value='1' onclick='handleSelect("q95", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q95' value='2' onclick='handleSelect("q95", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q95' value='3' onclick='handleSelect("q95", 3)'> 정밀도</label><br>
+<p id='result_q95'></p><br></div>
+<div><p><strong>96. StratifiedKFold가 필요한 이유는?</strong></p>
+<label><input type='radio' name='q96' value='0' onclick='handleSelect("q96", 0)'> 데이터의 균형을 맞추기 위해</label><br>
+<label><input type='radio' name='q96' value='1' onclick='handleSelect("q96", 0)'> 훈련 시간 단축을 위해</label><br>
+<label><input type='radio' name='q96' value='2' onclick='handleSelect("q96", 0)'> 레이블을 제거하기 위해</label><br>
+<label><input type='radio' name='q96' value='3' onclick='handleSelect("q96", 0)'> 모델 복잡도를 높이기 위해</label><br>
+<p id='result_q96'></p><br></div>
+<div><p><strong>97. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q97' value='0' onclick='handleSelect("q97", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q97' value='1' onclick='handleSelect("q97", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q97' value='2' onclick='handleSelect("q97", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q97' value='3' onclick='handleSelect("q97", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q97'></p><br></div>
+<div><p><strong>98. 다음 중 피처 스케일링이 반드시 필요한 경우는?</strong></p>
+<label><input type='radio' name='q98' value='0' onclick='handleSelect("q98", 2)'> 트리 기반 모델</label><br>
+<label><input type='radio' name='q98' value='1' onclick='handleSelect("q98", 2)'> 선형 회귀</label><br>
+<label><input type='radio' name='q98' value='2' onclick='handleSelect("q98", 2)'> KNN</label><br>
+<label><input type='radio' name='q98' value='3' onclick='handleSelect("q98", 2)'> 데이터 시각화</label><br>
+<p id='result_q98'></p><br></div>
+<div><p><strong>99. 하이퍼 파라미터에 해당하는 항목은 무엇인가?</strong></p>
+<label><input type='radio' name='q99' value='0' onclick='handleSelect("q99", 1)'> 선형 회귀의 계수</label><br>
+<label><input type='radio' name='q99' value='1' onclick='handleSelect("q99", 1)'> KNN의 k 값</label><br>
+<label><input type='radio' name='q99' value='2' onclick='handleSelect("q99", 1)'> 훈련 데이터의 레이블</label><br>
+<label><input type='radio' name='q99' value='3' onclick='handleSelect("q99", 1)'> 테스트 데이터 분포</label><br>
+<p id='result_q99'></p><br></div>
+<div><p><strong>100. 의사결정트리의 정보 균일도를 나타내는 지표가 아닌 것은?</strong></p>
+<label><input type='radio' name='q100' value='0' onclick='handleSelect("q100", 3)'> 지니 계수</label><br>
+<label><input type='radio' name='q100' value='1' onclick='handleSelect("q100", 3)'> 엔트로피</label><br>
+<label><input type='radio' name='q100' value='2' onclick='handleSelect("q100", 3)'> 정보 이득 지수</label><br>
+<label><input type='radio' name='q100' value='3' onclick='handleSelect("q100", 3)'> 정밀도</label><br>
+<p id='result_q100'></p><br></div>
+</body></html>
