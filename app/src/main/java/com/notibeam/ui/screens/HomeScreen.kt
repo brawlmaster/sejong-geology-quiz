@@ -16,18 +16,28 @@ import androidx.compose.material3.SegmentedButtonRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.notibeam.data.AppPreferences
+import kotlinx.coroutines.launch
 
 @Composable
 fun HomeScreen(navController: NavController) {
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
     val selectedRole = remember { mutableStateOf(0) } // 0: Sender, 1: Receiver
+
+    LaunchedEffect(Unit) {
+        val role = AppPreferences.getRole(context)
+        selectedRole.value = if (role == "receiver") 1 else 0
+    }
 
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
@@ -39,12 +49,18 @@ fun HomeScreen(navController: NavController) {
         SegmentedButtonRow {
             SegmentedButton(
                 selected = selectedRole.value == 0,
-                onClick = { selectedRole.value = 0 },
+                onClick = {
+                    selectedRole.value = 0
+                    scope.launch { AppPreferences.setRole(context, "sender") }
+                },
                 label = { Text("Sender") }
             )
             SegmentedButton(
                 selected = selectedRole.value == 1,
-                onClick = { selectedRole.value = 1 },
+                onClick = {
+                    selectedRole.value = 1
+                    scope.launch { AppPreferences.setRole(context, "receiver") }
+                },
                 label = { Text("Receiver") }
             )
         }

@@ -24,6 +24,7 @@ import com.notibeam.ui.screens.AppFilterScreen
 import com.notibeam.ui.screens.DevicesScreen
 import com.notibeam.ui.screens.HomeScreen
 import com.notibeam.ui.screens.PairingScreen
+import com.notibeam.ui.screens.QrScanScreen
 import com.notibeam.ui.theme.NotiBeamTheme
 
 class MainActivity : ComponentActivity() {
@@ -55,6 +56,7 @@ fun AppNav() {
     NavHost(navController = navController, startDestination = "home") {
         composable("home") { HomeScreen(navController) }
         composable("pair") { PairingScreen(navController) }
+        composable("scan") { QrScanScreen(navController) }
         composable("apps") { AppFilterScreen(navController) }
         composable("devices") { DevicesScreen(navController) }
     }

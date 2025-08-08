@@ -51,10 +51,11 @@ fun PairingScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         TopAppBar(title = { Text("Pair devices") })
-        Text("Scan this QR on the sender device to pair with this device")
+        Text("Receiver: Scan this QR on the sender device to pair")
         qrBitmapState.value?.let { bmp ->
             Image(bitmap = bmp.asImageBitmap(), contentDescription = "Pair QR")
         }
+        Button(onClick = { navController.navigate("scan") }) { Text("Sender: Scan QR") }
         Spacer(modifier = Modifier.height(8.dp))
         Text("Or paste a pairing code:")
         OutlinedTextField(value = manualCode.value, onValueChange = { manualCode.value = it })

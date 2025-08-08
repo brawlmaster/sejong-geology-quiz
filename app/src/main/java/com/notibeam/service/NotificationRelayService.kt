@@ -24,6 +24,9 @@ class NotificationRelayService : NotificationListenerService() {
         if (sbn == null) return
 
         scope.launch {
+            val role = AppPreferences.getRole(applicationContext)
+            if (role != "sender") return@launch
+
             val allowed = AppPreferences.getEnabledPackages(applicationContext)
             if (allowed.isNotEmpty() && !allowed.contains(sbn.packageName)) {
                 return@launch
