@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NotiBeam</string>
+    <string name="home_title">NotiBeam</string>
+    <string name="role_sender">Sender</string>
+    <string name="role_receiver">Receiver</string>
+    <string name="pair_devices">Pair devices</string>
+    <string name="manage_devices">Manage devices</string>
+    <string name="filter_apps">Select apps</string>
+    <string name="open_notification_access">Grant notification access</string>
+</resources>
