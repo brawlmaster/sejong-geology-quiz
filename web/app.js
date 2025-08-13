@@ -302,8 +302,20 @@ managerModeBtn.addEventListener('click', () => {
     isManagerMode = true;
     managerModeBtn.textContent = '관리자 모드 해제';
   } else {
-    // 관리자 모드 해제 시 전체 페이지 새로고침
-    location.reload();
+    // 관리자 모드 해제 시 서비스 워커를 먼저 업데이트하고 강제 새로고침(캐시 무력화)
+    try {
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistration().then(reg => reg?.update()).finally(() => {
+          const u = new URL(location.href);
+          u.searchParams.set('r', Date.now().toString());
+          location.replace(u.toString());
+        });
+        return;
+      }
+    } catch {}
+    const u = new URL(location.href);
+    u.searchParams.set('r', Date.now().toString());
+    location.replace(u.toString());
     return;
   }
   render();
