@@ -302,16 +302,9 @@ managerModeBtn.addEventListener('click', () => {
     isManagerMode = true;
     managerModeBtn.textContent = '관리자 모드 해제';
   } else {
-    isManagerMode = false;
-    managerModeBtn.textContent = '관리자 모드';
-    // 관리자 모드 해제 시 열린 창이 있으면 닫기 및 초기화
-    try {
-      if (eventDialog && eventDialog.open) {
-        eventDialog.close('manager-off');
-      }
-      eventForm?.reset?.();
-      deleteEventBtn.hidden = true;
-    } catch {}
+    // 관리자 모드 해제 시 전체 페이지 새로고침
+    location.reload();
+    return;
   }
   render();
 });
