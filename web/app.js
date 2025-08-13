@@ -254,8 +254,24 @@ deleteEventBtn.addEventListener('click', async () => {
 
 // 취소 버튼으로 항상 닫히도록 보장
 const cancelEventBtn = document.getElementById('cancelEvent');
-cancelEventBtn.addEventListener('click', () => {
-  eventDialog.close();
+cancelEventBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  eventDialog.close('cancel');
+});
+
+// 바깥(백드롭) 클릭 시 닫기
+eventDialog.addEventListener('click', (e) => {
+  if (e.target === eventDialog) {
+    e.preventDefault();
+    eventDialog.close('backdrop');
+  }
+});
+
+// Esc 키로 닫기 보강
+eventDialog.addEventListener('cancel', (e) => {
+  e.preventDefault();
+  eventDialog.close('esc');
 });
 
 /* Navigation */
