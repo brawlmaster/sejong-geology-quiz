@@ -10,7 +10,8 @@ const prevMonthBtn = document.getElementById("prevMonth");
 const nextMonthBtn = document.getElementById("nextMonth");
 const upcomingList = document.getElementById("upcomingList");
 const managerModeBtn = document.getElementById("managerModeBtn");
-const notifyToggleBtn = document.getElementById("notifyToggle");
+const notifySubscribeBtn = document.getElementById("notifySubscribe");
+const notifyUnsubscribeBtn = document.getElementById("notifyUnsubscribe");
 
 const eventDialog = document.getElementById("eventDialog");
 const eventForm = document.getElementById("eventForm");
@@ -376,36 +377,37 @@ async function subscribePush() {
     applicationServerKey: urlBase64ToUint8Array(vapidKey)
   });
   await api('/api/subscribe', { method: 'POST', body: JSON.stringify(subscription) });
-  notifyToggleBtn.textContent = '알림 해제';
-  alert('알림을 구독했습니다.');
+  alert('알림 신청 완료!');
+  updateNotifyButtons();
 }
 
 async function unsubscribePush() {
   const registration = await navigator.serviceWorker.ready;
   const subscription = await registration.pushManager.getSubscription();
   if (!subscription) {
-    notifyToggleBtn.textContent = '알림 받기';
+    updateNotifyButtons();
     return;
   }
   await subscription.unsubscribe();
   await api('/api/unsubscribe', { method: 'POST', body: JSON.stringify(subscription) });
-  notifyToggleBtn.textContent = '알림 받기';
-  alert('알림 구독을 해제했습니다.');
+  alert('알림 취소 완료!');
+  updateNotifyButtons();
 }
 
-notifyToggleBtn.addEventListener('click', async () => {
-  if (notifyToggleBtn.textContent.includes('해제')) {
-    await unsubscribePush();
-  } else {
-    await subscribePush();
-  }
+notifySubscribeBtn.addEventListener('click', async () => {
+  await subscribePush();
+});
+notifyUnsubscribeBtn.addEventListener('click', async () => {
+  await unsubscribePush();
 });
 
-async function updateNotifyButton() {
+async function updateNotifyButtons() {
   if (!('serviceWorker' in navigator)) return;
   const registration = await navigator.serviceWorker.ready;
   const subscription = await registration.pushManager.getSubscription();
-  notifyToggleBtn.textContent = subscription ? '알림 해제' : '알림 받기';
+  const isOn = Boolean(subscription);
+  notifySubscribeBtn.hidden = isOn;
+  notifyUnsubscribeBtn.hidden = !isOn;
 }
 
 function urlBase64ToUint8Array(base64String) {
@@ -426,5 +428,5 @@ function urlBase64ToUint8Array(base64String) {
   } catch (e) {
     console.warn('일정을 불러오지 못했습니다. 서버가 필요합니다.', e);
   }
-  await updateNotifyButton();
+  await updateNotifyButtons();
 })();
