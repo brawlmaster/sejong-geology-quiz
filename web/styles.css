@@ -40,8 +40,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  background: linear-gradient(0deg, var(--color-bg), var(--color-bg)),
-              linear-gradient(90deg, var(--color-primary), var(--color-primary-600));
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-600));
   color: #fff;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -98,8 +97,9 @@ body {
   padding: 6px 8px;
   font-size: 12px;
   border-radius: 8px;
-  background: rgba(10,42,102,0.08);
+  background: rgba(10,42,102,0.18);
   color: var(--color-primary-600);
+  border: 1px solid rgba(10,42,102,0.35);
 }
 @media (prefers-color-scheme: dark) {
   .event-chip { background: rgba(90,161,255,0.12); color: var(--color-accent); }
@@ -108,6 +108,9 @@ body {
 
 .legend { margin-top: 8px; font-size: 12px; color: var(--color-muted); display: flex; align-items: center; gap: 6px; }
 .legend-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); display: inline-block; }
+
+/* Utility to support hidden toggle via class */
+.hidden { display: none !important; }
 
 .upcoming-section { margin-top: 16px; }
 .upcoming-section h3 { margin: 12px 0; }
