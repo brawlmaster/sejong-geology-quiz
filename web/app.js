@@ -48,9 +48,8 @@ function toLocalInputValue(date) {
   return local.toISOString().slice(0,16);
 }
 function parseLocalInputValue(val) {
-  const date = new Date(val);
-  const tzOffset = new Date().getTimezoneOffset();
-  return new Date(date.getTime() + tzOffset * 60000);
+  // datetime-local 값은 로컬 시간으로 해석되므로 추가 보정 없이 Date로 생성
+  return new Date(val);
 }
 
 /* API */
@@ -198,6 +197,9 @@ function render() {
   renderUpcoming();
 }
 
+// 서버 연결 실패 시에도 로컬에서 추가한 일정이 바로 보이도록(옵션)
+// 필요 시, 임시 캐시를 두고 서버 저장 실패 시 사용자에게 알림으로 안내하는 전략도 고려 가능
+
 /* Dialogs */
 function openCreateDialog(date) {
   dialogTitle.textContent = '일정 추가';
@@ -240,8 +242,10 @@ eventForm.addEventListener('submit', async (e) => {
   if (!payload.title) return;
   try {
     await saveAssignment(payload, Boolean(id));
+    // 최신 데이터 반영 전, 현재 월을 그대로 유지하며 즉시 렌더
     await loadAssignments();
     eventDialog.close();
+    alert('일정이 저장되었습니다.');
   } catch (err) {
     alert('저장 실패: ' + err.message);
   }
