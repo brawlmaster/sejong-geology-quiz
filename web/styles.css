@@ -1,0 +1,159 @@
+:root {
+  --color-primary: #0a2a66; /* Navy */
+  --color-primary-600: #0f3a8a;
+  --color-accent: #3a87ff;
+  --color-bg: #ffffff;
+  --color-text: #0b1220;
+  --color-muted: #6b7280;
+  --color-danger: #d14343;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0b0d12; /* Black-ish for dark */
+    --color-text: #eef2ff;
+    --color-muted: #9aa4b2;
+    --color-primary: #0f1f4a; /* Black + Navy */
+    --color-primary-600: #1b3a6b;
+    --color-accent: #5aa1ff;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: linear-gradient(0deg, var(--color-bg), var(--color-bg)),
+              linear-gradient(90deg, var(--color-primary), var(--color-primary-600));
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.app-title { margin: 0; font-size: 20px; font-weight: 700; }
+.header-actions { display: flex; gap: 8px; }
+
+.container { max-width: 980px; margin: 18px auto; padding: 0 16px; }
+
+.calendar-section {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  .calendar-section { background: rgba(16,22,32,0.6); }
+}
+
+.calendar-header { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.calendar-header h2 { margin: 8px 0; font-size: 18px; }
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.calendar-cell {
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  min-height: 100px;
+  padding: 8px;
+  background: rgba(255,255,255,0.9);
+}
+@media (prefers-color-scheme: dark) {
+  .calendar-cell {
+    background: rgba(20,24,33,0.85);
+    border-color: rgba(255,255,255,0.06);
+  }
+}
+
+.calendar-cell .date-label {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+.calendar-cell .events { margin-top: 6px; display: flex; flex-direction: column; gap: 6px; }
+.event-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: rgba(10,42,102,0.08);
+  color: var(--color-primary-600);
+}
+@media (prefers-color-scheme: dark) {
+  .event-chip { background: rgba(90,161,255,0.12); color: var(--color-accent); }
+}
+.event-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); }
+
+.legend { margin-top: 8px; font-size: 12px; color: var(--color-muted); display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); display: inline-block; }
+
+.upcoming-section { margin-top: 16px; }
+.upcoming-section h3 { margin: 12px 0; }
+.upcoming-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.upcoming-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.9);
+}
+@media (prefers-color-scheme: dark) {
+  .upcoming-item { background: rgba(20,24,33,0.85); border-color: rgba(255,255,255,0.06); }
+}
+.item-title { font-weight: 600; }
+.item-due { color: var(--color-muted); font-size: 12px; }
+
+.app-footer {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-muted);
+}
+
+.btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.primary { background: #ffffff; color: var(--color-primary); }
+.btn.secondary { background: rgba(255,255,255,0.3); color: #ffffff; border: 1px solid rgba(255,255,255,0.4); }
+.btn.danger { background: var(--color-danger); color: #fff; }
+
+.icon-btn { border: none; background: transparent; color: var(--color-text); font-size: 24px; cursor: pointer; }
+
+/* Dialog */
+#eventDialog::backdrop { background: rgba(0,0,0,0.4); }
+#eventDialog { border: none; border-radius: 12px; padding: 0; }
+#eventForm { padding: 16px; min-width: 320px; }
+.form-row { display: grid; gap: 6px; margin-bottom: 10px; }
+input, textarea { padding: 10px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.12); background: var(--color-bg); color: var(--color-text); }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+
+.install-link { color: #fff; background: var(--color-primary-600); padding: 6px 10px; border-radius: 8px; text-decoration: none; }
