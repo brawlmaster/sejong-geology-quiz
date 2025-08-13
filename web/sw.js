@@ -1,4 +1,4 @@
-const CACHE_NAME = 'class-helper-cache-v1';
+const CACHE_NAME = 'class-helper-cache-v2';
 const PRECACHE_URLS = [
   './',
   './index.html',
@@ -21,9 +21,24 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
+// Network-first for core assets to avoid stale UI
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  const isCore = PRECACHE_URLS.some(path => url.pathname.endsWith(path.replace('./','/')));
+
+  if (isCore) {
+    event.respondWith(
+      fetch(request).then(response => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+        return response;
+      }).catch(() => caches.match(request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;
@@ -34,6 +49,14 @@ self.addEventListener('fetch', (event) => {
       }).catch(() => cached);
     })
   );
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data === 'CLEAR_CACHES_AND_RELOAD') {
+    event.waitUntil(
+      caches.keys().then(names => Promise.all(names.map(n => caches.delete(n)))).then(() => self.skipWaiting())
+    );
+  }
 });
 
 self.addEventListener('push', (event) => {

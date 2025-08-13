@@ -302,21 +302,29 @@ managerModeBtn.addEventListener('click', () => {
     isManagerMode = true;
     managerModeBtn.textContent = '관리자 모드 해제';
   } else {
-    // 관리자 모드 해제 시 서비스 워커를 먼저 업데이트하고 강제 새로고침(캐시 무력화)
+    // 관리자 모드 해제 시: 서비스워커 해제 + 모든 캐시 삭제 + 강제 새로고침(캐시 무력화)
+    const hardReload = () => {
+      const u = new URL(location.href);
+      u.searchParams.set('r', Date.now().toString());
+      location.replace(u.toString());
+    };
     try {
+      const clearCaches = () => (self.caches ? caches.keys().then(names => Promise.all(names.map(n => caches.delete(n)))) : Promise.resolve());
       if (navigator.serviceWorker) {
-        navigator.serviceWorker.getRegistration().then(reg => reg?.update()).finally(() => {
-          const u = new URL(location.href);
-          u.searchParams.set('r', Date.now().toString());
-          location.replace(u.toString());
-        });
+        navigator.serviceWorker.getRegistrations()
+          .then(regs => Promise.all(regs.map(r => r.unregister())))
+          .catch(() => {})
+          .finally(() => {
+            clearCaches().finally(hardReload);
+          });
         return;
       }
-    } catch {}
-    const u = new URL(location.href);
-    u.searchParams.set('r', Date.now().toString());
-    location.replace(u.toString());
-    return;
+      clearCaches().finally(hardReload);
+      return;
+    } catch {
+      hardReload();
+      return;
+    }
   }
   render();
 });
