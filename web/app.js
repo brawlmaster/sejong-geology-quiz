@@ -252,6 +252,12 @@ deleteEventBtn.addEventListener('click', async () => {
   }
 });
 
+// 취소 버튼으로 항상 닫히도록 보장
+const cancelEventBtn = document.getElementById('cancelEvent');
+cancelEventBtn.addEventListener('click', () => {
+  eventDialog.close();
+});
+
 /* Navigation */
 prevMonthBtn.addEventListener('click', () => {
   currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
