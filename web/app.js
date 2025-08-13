@@ -220,6 +220,13 @@ function openEditDialog(assignment) {
   eventDialog.showModal();
 }
 
+// 닫기(X) 버튼 동작
+document.querySelector('.dialog-close')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  eventDialog.close('close-button');
+});
+
 eventForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const id = eventIdInput.value || undefined;

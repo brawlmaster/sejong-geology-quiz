@@ -151,9 +151,20 @@ body {
 /* Dialog */
 #eventDialog::backdrop { background: rgba(0,0,0,0.4); }
 #eventDialog { border: none; border-radius: 12px; padding: 0; }
-#eventForm { padding: 16px; min-width: 320px; }
+#eventForm { padding: 16px; min-width: 320px; position: relative; }
 .form-row { display: grid; gap: 6px; margin-bottom: 10px; }
 input, textarea { padding: 10px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.12); background: var(--color-bg); color: var(--color-text); }
 .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+
+/* Dialog-specific button visibility */
+#eventDialog .btn.primary { background: var(--color-primary-600); color: #fff; }
+#eventDialog .dialog-actions .btn.secondary { background: transparent; color: var(--color-primary-600); border: 1px solid var(--color-primary-600); }
+@media (prefers-color-scheme: dark) {
+  #eventDialog .dialog-actions .btn.secondary { color: #fff; border-color: rgba(255,255,255,0.5); background: transparent; }
+}
+
+/* Close (X) button in dialog */
+.dialog-close { position: absolute; top: 8px; right: 8px; border: none; background: transparent; color: var(--color-muted); font-size: 20px; cursor: pointer; }
+.dialog-close:hover { color: var(--color-text); }
 
 .install-link { color: #fff; background: var(--color-primary-600); padding: 6px 10px; border-radius: 8px; text-decoration: none; }
